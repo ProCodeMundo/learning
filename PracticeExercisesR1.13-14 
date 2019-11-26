@@ -1,0 +1,30 @@
+/* Practices Exercises R1.13-14 Page 25
+
+•• R1.13  Write an algorithm to settle the following question: A bank account starts out with $10,000. Interest is compounded monthly at 6 percent per year (0.5 percent per month). Every month, $500 is withdrawn to meet college expenses. After how many years is the account depleted?
+••• R1.14  Consider the question in Exercise R1.13. Suppose the numbers ($10,000, 6 percent, $500) were user selectable. Are there values for which the algorithm you developed would not terminate? If so, change the algorithm to make sure it always terminates.
+*/
+
+
+
+public class Balance {
+
+	
+	public static void main(String[] args) {
+		//variable
+	double balance =10000;
+	int year=12;
+	int months = 0;
+	
+	for(;balance >=500;) {
+		balance =(balance *1.005);
+		balance = balance -500;
+		months++;
+		System.out.print(months + " months ");
+		System.out.println("& balance $ "+ String.format("%.2f", balance));//%.2f formats the double to only get the 2 first decimals.
+				
+	}
+	System.out.println("The ccount will be depleted in " + months+ " months or year(s) " + months/year);
+}
+
+	
+}
